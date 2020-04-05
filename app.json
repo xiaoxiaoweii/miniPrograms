@@ -3,5 +3,30 @@
     "pages/home/home",
     "pages/about/about"
   ],
-  "sitemapLocation": "sitemap44.json"
+  "sitemapLocation": "sitemap44.json",
+  "window": {
+    "navigationBarBackgroundColor": "#FF5777",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "HAHAHA",
+    "backgroundColor": "blue",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "selectedColor": "#FF5777",
+    "list": [
+      {
+      "pagePath": "pages/home/home",
+      "text": "home",
+      "iconPath": "/assets/images/tabbar/home.png",
+      "selectedIconPath": "/assets/images/tabbar/home_active.png"
+      },
+      {
+      "pagePath": "pages/about/about",
+      "text": "about",
+      "iconPath": "/assets/images/tabbar/cart.png",
+      "selectedIconPath": "/assets/images/tabbar/cart_active.png"
+      }
+    ]
+  }
 }
