@@ -1,30 +1,11 @@
-// pages/home/home.js
-// 注册一个页面
+// pages/about/about.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    name: 'xiaoxiaoweii',
-    age: '18',
-    students: [
-      {id: 110, name: 'kobe', age: 35},
-      {id: 110, name: 'kobe', age: 35},
-      {id: 110, name: 'kobe', age: 35},
-      {id: 110, name: 'kobe', age: 35}
-    ],
-    counter: 0
-  },
-  handleBtnClick() {
-    // 错误做法
-    // console.log("biu")
-    // this.data.counter += 1
-    // console.log(this.data.counter)
-    // 正确做法
-    this.setData({
-      counter: this.data.counter += 1
-    })
+
   },
 
   /**
