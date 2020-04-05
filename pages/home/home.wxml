@@ -1,0 +1,9 @@
+<!--pages/home/home.wxml-->
+<!-- 1.小程序的数据绑定 -->
+<view>Hello {{name}}</view>
+<view>年龄： {{age}}</view>
+
+<view wx:for= "{{students}}">{{item.name}}--{{item.age}}</view>
+
+<view>当前计数：{{counter}}</view>
+<button size="mini" bindtap="handleBtnClick">+</button>
