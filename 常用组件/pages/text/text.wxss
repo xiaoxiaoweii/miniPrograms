@@ -1,0 +1,21 @@
+/* pages/text/text.wxss */
+.pressed {
+  background: red;
+  color: aliceblue;
+}
+.box1 {
+  background: red;
+}
+.box2 {
+  background: rebeccapurple;
+}
+.active_box2 {
+  background: sienna;
+}
+.box3 {
+  background: violet;
+}
+.box4 {
+  width: 50%;
+  background: yellow;
+}

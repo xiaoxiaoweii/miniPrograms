@@ -1,0 +1,56 @@
+<!--pages/text/text.wxml-->
+<view>-----------text--------------</view>
+<!-- 1.基本使用 -->
+<text>Hello World</text>
+<text>你好啊</text>
+
+<text>Hello World\n</text>
+<text>你好啊\n</text>
+
+<!-- 2 -->
+<!-- 默认情况下text中的文本长按不能选中 -->
+<text selectable="{{true}}">长按可选中\n</text>
+<text selectable>长按可选中\n</text>
+<!-- 显示连续空格 -->
+<text space="emsp">连续空格    显示\n</text>
+<text space="ensp">连续空格    显示\n</text>
+<text space="nbsp">连续空格    显示\n</text>
+
+<!-- 是否解码 -->
+
+<text>5 &gt; 3\n</text>
+<text decode>5 &gt; 3</text>
+
+<view>-----------button--------------</view>
+<!-- 基本使用 -->
+<button>按钮</button>
+<!-- mini不独占一行 -->
+<button size="mini">小按钮</button>
+<button size="mini">小按钮</button>
+<!-- type属性 -->
+<button size="mini" type="primary">按钮</button>
+<button size="mini" type="default">按钮</button>
+<button size="mini" type="warn">按钮</button>
+<!-- 镂空 -->
+<button size="mini" plain="true">按钮</button>
+<!-- disable 不可用 -->
+<button size="mini" type="default" disabled>按钮</button>
+<!-- loading -->
+<button size="mini" type="default" loading>按钮</button>
+<!-- hover-class -->
+<button hover-class="pressed">按钮</button>
+<!-- view -->
+<view>-----------view--------------</view>
+<!-- 基本使用 -->
+<view class="box1">xiaoxiaoweii</view>
+<view class="box2">xiaoxiaoweii</view>
+<!-- hover-class -->
+<view class="box1" hover-class="active_box2">xiaoxiaoweii</view>
+<!-- hover-stay-time -->
+<view class="box2" hover-class="active_box2" hover-stay-time="1000">xiaoxiaoweii</view>
+<!-- hover-start-time -->
+<view class="box1" hover-class="active_box2" hover-start-time="1000">xiaoxiaoweii</view>
+<!-- hover-stop-propagation -->
+<view class="box3">
+  <view class="box4" hover-class="active_box2" hover-stop-propagation="true">xiaoxiaoweii</view>
+</view>
