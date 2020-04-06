@@ -1,0 +1,4 @@
+<!--pages/text/text.wxml-->
+<!-- 从手机里选择图片显示到小程序上 -->
+<button bindtap="handleChooseImage">选择图片</button>
+<image src="{{imagePath}}"></image> 
