@@ -1,0 +1,17 @@
+/* index.scss */
+@font-face {
+  font-family: "weather";
+  src: url("./weather.ttf") format("truetype");
+}
+
+.icon {
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: .4rpx;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon::after,
+.icon::before {
+  font-family: weather !important;
+}
