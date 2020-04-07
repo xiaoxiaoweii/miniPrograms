@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "晓天气",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+  }
 }

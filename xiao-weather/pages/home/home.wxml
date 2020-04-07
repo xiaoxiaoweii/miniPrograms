@@ -1,0 +1,57 @@
+<!--pages/home/home.wxml-->
+<view class="container">
+  <!-- 背景图片 -->
+  <view class='bcg'></view>
+  <image class='bcg' src='/assets/images/u=3927192440,2523969080&fm=26&gp=0.jpg' mode='aspectFill'></image>
+  <!-- 当前天气情况 -->
+  <view class='content'>
+    <!-- 用户信息 防止事件冒泡 -->
+    <view class='avatarInfo'>
+      <!-- 用户头像 -->
+      <open-data class='avatar' type='userAvatarUrl'></open-data>
+      <!-- 用户名字 -->
+      <open-data class='name' type='userNickName'></open-data>
+    </view>
+    <!--城市天气信息 -->
+    <view class='info'>
+      <view class='city'>
+        <!-- 当地城市 没有获取到显示定位中 -->
+        <view class='name'>{{cityDatas.originalData.results[0].currentCity || '定位中'}}</view>
+        <text class='time' >{{cityDatas.updateTimeFormat}} 更新</text>
+      </view>
+      <view class='message'>{{message}}</view>
+      <view class='temp num' decode='true'>{{cityDatas.temperature}}<text style='font-size:90rpx'>°</text></view>
+      <view class='weather'>{{cityDatas.originalData.results[0].weather_data[0].weather || '--'}}</view>
+      <view class='pm'>
+        <text>{{cityDatas.pm.desc}} {{cityDatas.pm.val}} {{cityDatas.pm.detail}}</text>
+      </view>
+    </view>
+
+    <!-- 近日天气信息导航 -->
+    <view class='guide' wx:if='{{cityDatas.originalData.results[0].weather_data}}'>
+      <view class='item' wx:for='{{cityDatas.originalData.results[0].weather_data}}' wx:key='{{index}}'>
+        <view class='date i'>{{index === 0 ? '今天' : item.date}}</view>
+        <view class='temperature i'>{{item.temperature}}</view>
+        <!-- <image class='i' src='{{item.dayPictureUrl}}' mode='widthFix'></image> -->
+        <!-- <image class='i' src='{{item.nightPictureUrl}}' mode='widthFix'></image> -->
+        <view class='weather i'>{{item.weather}}</view>
+        <view class='wind i'>{{item.wind}}</view>
+      </view>
+    </view>
+    <!-- 温馨提示 -->
+    <view class='livingIndex' wx:if='{{cityDatas.originalData.results[0].index && !setting.hiddenIndex}}'>
+      <view class='item' wx:for='{{cityDatas.originalData.results[0].index}}' wx:key='{{index}}'>
+        <image class='icon' src='{{icons[index]}}'></image>
+        <view class='right'>
+          <view class='key'>{{item.tipt}} {{item.zs}}</view>
+          <view class='value'>{{item.des}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='footer'>xiaoxiaoweii</view>
+  </view>
+  <view wx:if='{{openSettingButtonShow}}' class='openSettingButton'>
+    <image src='/img/unlock.png'></image>
+    <button open-type='openSetting'></button>
+  </view>
+</view>

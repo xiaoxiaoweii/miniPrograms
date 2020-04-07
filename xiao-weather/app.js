@@ -1,22 +1,20 @@
 App({
   onLaunch () {
-    let that = this
-    // 获取系统信息
     wx.getSystemInfo({
-      success: function (res) {
-        console.log(res)
-        that.globalData.systeminfo = res
+      success: (res) => {
+        this.globalData.systeminfo = res
+        this.globalData.isIPhoneX = /iphonex/gi.test(res.model.replace(/\s+/, ''))
       },
     })
   },
-  globalData: {
+  globalData: { 
     // 是否保持常亮，离开小程序失效
     keepscreenon:false,
-    // 存储系统信息
     systeminfo: {},
-    // ak: 'your baidu map application ak',
+    isIPhoneX: false,
+    ak: 'gShThHfkapVItaFknyMwCeMtQLasPvi0',
   },
-  // setGeocoderUrl (address) {
-  //   return `https://api.map.baidu.com/geocoder/v2/?address=${address}&output=json&ak=${this.globalData.ak}`
-  // },
+  setGeocoderUrl (address) {
+    return `https://api.map.baidu.com/geocoder/v2/?address=${address}&output=json&ak=${this.globalData.ak}`
+  },
 })

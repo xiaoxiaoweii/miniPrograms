@@ -1,12 +1,13 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#00BFFF",
+    "navigationBarBackgroundColor": "#385ab4",
     "navigationBarTitleText": "晓天气",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

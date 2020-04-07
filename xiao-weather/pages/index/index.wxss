@@ -1,7 +1,6 @@
-/* pages/index/index.wxss */
 page {
-  /* 字体抗锯齿渲染 */
   -webkit-font-smoothing: antialiased;
+  font-family: "PingHei","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
 }
 .num {
   font-weight: 300;
@@ -10,11 +9,21 @@ page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  color: rgb(34, 33, 33);
+  color: #fff;
   font-size: 30rpx;
 }
-/* ----------------search------------------------ */
-
+.bcg {
+  position: fixed;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* background: #40a7e7; */
+  /* background: linear-gradient(to bottom, #73C6F1, #50B5EC); */
+}
 .search {
   position: fixed;
   z-index: 4;
@@ -23,9 +32,8 @@ page {
   right: 0;
   width: 100%;
   height: 90rpx;
-  background: #40a7e7;
+  /* background: #40a7e7; */
 }
-/* 搜索wrapper */
 .search .wrapper {
   display: flex;
   flex-direction: row;
@@ -39,43 +47,103 @@ page {
   /* border-radius: 10rpx; */
   /* border: 1rpx solid #999; */
   border: none;
-  border-bottom: 1rpx solid rgb(17, 15, 15);
+  border-bottom: 1rpx solid #fff;
 }
-/* 搜索框左侧图标 */
 .search image {
   width: 28rpx;
   height: 28rpx;
   margin-right: 16rpx;
 }
-/* 搜索框输入框 */
 .search input {
   flex: 1;
 }
-/* 指定 placeholder 的样式类 */
 .placeholderClass {
-  color: rgb(27, 25, 25);
+  color: #fff;
 }
-
-
-/* ----------------content------------------------ */
-
+.chooseBcg {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  font-size: 24rpx;
+  color: #333;
+}
+.chooseBcg .top {
+  box-sizing: border-box;
+  padding: 20rpx 20rpx 50rpx;
+  background: rgba(255, 255, 255, 0);
+  color: #fff;
+}
+.chooseBcg .bcgs {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  overflow: scroll;
+}
+.chooseBcg .border {
+  padding: 6rpx;
+  margin-right: 14rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0);
+  transition: .1s ease;
+}
+.chooseBcg .border:last-child {
+  margin-right: 0;
+}
+.chooseBcg .border.active {
+  border: 1rpx solid #40a7e7;
+  transition: .1s ease;
+}
+.chooseBcg .bcgs image {
+  width: 110rpx;
+  height: 190rpx;
+}
+.chooseBcg .close {
+  flex: 1;
+  background: rgba(0, 0, 0, 0);
+  padding: 20rpx 0;
+  text-align: center;
+}
+.chooseBcg .close image {
+  width: 64rpx;
+  height: 64rpx;
+}
+.avatarInfo {
+  display: flex;
+  align-items: center;
+  padding: 0 50rpx;
+}
+.avatarInfo .avatar {
+  display: block;
+  overflow: hidden;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.avatarInfo .name {
+  padding: 0 20rpx;
+  font-size: 30rpx;
+}
+.avatarInfo .downArrow {
+  width: 30rpx;
+  height: 30rpx;
+}
 .container .content {
   flex: 2;
-  /* ease规定慢速开始 然后变快 */
   transition: .3s ease;
 }
-.content,
-.copy {
+.content {
   position: relative;
   z-index: 2;
 }
-/* info */
 .info {
   padding-bottom: 50rpx;
   /* border-bottom: 1rpx solid rgba(240, 240, 240, .4); */
 }
-/* info区域共有样式 */
-.city,
 .info .temp,
 .info .pm,
 .info .pm view,
@@ -87,11 +155,9 @@ page {
   justify-content: center;
   align-items: center;
 }
-/* 当前天气 */
 .info .weather {
   margin-bottom: 30rpx;
 }
-/* info pm text */
 .info .pm text {
   font-size: 24rpx;
   height: 1em;
@@ -100,27 +166,36 @@ page {
   border-radius: 20rpx;
   background: rgba(240, 240, 240, .2);
 }
-/* city */
 .city {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
-  height: 90rpx;
-  font-size: 36rpx;
+  padding: 0 50rpx;
+  font-size: 66rpx;
 }
-/* city time */
+.city .name {
+  width: 5em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
 .city .time {
-  position: absolute;
+  display: block;
+  text-align: right;
   font-size: 24rpx;
-  right: 30rpx;
-  top: 50%;
-  transform: translateY(-50%);
 }
-/* 当前城市温度 */
+.message {
+  font-size: 22rpx;
+  color: #fff;
+  padding: 30rpx 50rpx 0;
+  box-sizing: border-box;
+}
 .temp {
   height: 360rpx;
   font-size: 200rpx;
 }
-
-/* -----------guide-------------- */
 .guide {
   display: flex;
   flex-direction: row;
@@ -129,7 +204,7 @@ page {
   font-size: 24rpx;
   padding-top: 20rpx;
   /* border-bottom: 1rpx solid rgba(240, 240, 240, .4); */
-  background: rgba(6, 85, 114, .1);
+  background: rgba(0, 0, 0, .6);
   margin-bottom: 20rpx;
 }
 .guide .item {
@@ -144,12 +219,9 @@ page {
 .guide .i {
   padding-bottom: 20rpx;
 }
-
-/* ---------------livingIndex--------------- */
-
 .livingIndex {
   /* border-bottom: 1rpx solid rgba(240, 240, 240, .4); */
-  background: rgba(6, 85, 114, .1);
+  background: rgba(0, 0, 0, .6);
   margin-bottom: 20rpx;
 }
 .livingIndex .item {
@@ -180,19 +252,6 @@ page {
   height: 80rpx;
   padding: 0 24rpx;
 }
-
-/* ----------声明---------- */
-.copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10rpx 0;
-  height: 70rpx;
-  font-size: 22rpx;
-}
-
-/* -----------悬浮菜单----------- */
 .menus .menu {
   height: 40px;
   width: 40px;
@@ -204,4 +263,43 @@ page {
 }
 .menus .main {
   opacity: 1;
+}
+/* 打开设置页面 button */
+.openSettingButton {
+  position: fixed;
+  z-index: 102;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .5);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.openSettingButton image {
+  position: relative;
+  width: 128rpx;
+  height: 128rpx;
+  z-index: 2;
+}
+.openSettingButton button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 3;
+}
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60rpx;
+  font-size: 22rpx;
+  color: #fff;
 }
