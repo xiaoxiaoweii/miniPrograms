@@ -1,11 +1,10 @@
 {
   "pages": [
-    "pages/home/home",
-    "pages/index/index"
+    "pages/home/home"
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#385ab4",
+    "navigationBarBackgroundColor": "#212446",
     "navigationBarTitleText": "晓天气",
     "navigationBarTextStyle": "white"
   },

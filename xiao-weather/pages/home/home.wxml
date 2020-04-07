@@ -2,7 +2,7 @@
 <view class="container">
   <!-- 背景图片 -->
   <view class='bcg'></view>
-  <image class='bcg' src='/assets/images/u=3927192440,2523969080&fm=26&gp=0.jpg' mode='aspectFill'></image>
+  <image class='bcg' src='/assets/images/accomplishment-adventure-clear-sky-585825.jpg' mode='aspectFill'></image>
   <!-- 当前天气情况 -->
   <view class='content'>
     <!-- 用户信息 防止事件冒泡 -->
@@ -29,7 +29,7 @@
 
     <!-- 近日天气信息导航 -->
     <view class='guide' wx:if='{{cityDatas.originalData.results[0].weather_data}}'>
-      <view class='item' wx:for='{{cityDatas.originalData.results[0].weather_data}}' wx:key='{{index}}'>
+      <view class='item' wx:for='{{cityDatas.originalData.results[0].weather_data}}' wx:key='index'>
         <view class='date i'>{{index === 0 ? '今天' : item.date}}</view>
         <view class='temperature i'>{{item.temperature}}</view>
         <!-- <image class='i' src='{{item.dayPictureUrl}}' mode='widthFix'></image> -->
@@ -39,8 +39,8 @@
       </view>
     </view>
     <!-- 温馨提示 -->
-    <view class='livingIndex' wx:if='{{cityDatas.originalData.results[0].index && !setting.hiddenIndex}}'>
-      <view class='item' wx:for='{{cityDatas.originalData.results[0].index}}' wx:key='{{index}}'>
+    <view class='livingIndex'>
+      <view class='item' wx:for='{{cityDatas.originalData.results[0].index}}' wx:key='index'>
         <image class='icon' src='{{icons[index]}}'></image>
         <view class='right'>
           <view class='key'>{{item.tipt}} {{item.zs}}</view>

@@ -15,6 +15,8 @@ Page({
   data: {
     // 城市天气数据
     cityDatas: {},
+    // 温馨提示 图标
+    icons: ['/assets/images/clothing.png', '/assets/images/carwashing.png', '/assets/images/pill.png', '/assets/images/running.png', '/assets/images/sun.png'],
   },
   // 初始化百度地图数据
   init(params) {
