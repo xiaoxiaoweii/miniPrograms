@@ -149,5 +149,27 @@ Page({
   // 显示页面
   onShow() {
     this.init({})
-  }
+  },
+  // 分享
+  onShareAppMessage (res) {
+    return {
+      title: '晓晓天气预报',
+      path: `/pages/home/home`,
+      // imageUrl: '',
+      success() {},
+      // 分享失败弹出信息
+      fail(e) {
+        let errMsg = e.errMsg || ''
+        // 对不是用户取消转发导致的失败进行提示
+        let msg = '分享失败，可重新分享'
+        if (errMsg.indexOf('cancel') !== -1) {
+          msg = '取消分享'
+        }
+        wx.showToast({
+          title: msg,
+          icon: 'none',
+        })
+      }
+    }
+  },
 })
